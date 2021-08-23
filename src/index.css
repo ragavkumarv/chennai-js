@@ -1,7 +1,7 @@
 :root {
   --card-bg-pr-clr: #eaeaf3;
   --card-bg-acc-clr: #5568fe;
-  --text-acc-clr: #e3e3ea;
+  --text-acc-clr: #fefefe;
   /* --text-pr-clr: #8283ac; */
   /* --text-pr-clr: #9597ad; */
   /* --text-pr-clr: #5665c0; */
@@ -12,10 +12,18 @@
   --text-pr-clr: #3b416f;
 }
 
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .event-card {
-  min-width: 10rem;
+  width: min(50vw, 15rem);
+  aspect-ratio: 1;
   background-color: var(--card-bg-pr-clr);
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
   padding: 2em;
   color: var(--text-pr-clr);
   display: flex;
@@ -23,8 +31,13 @@
   gap: 1rem;
 }
 
-.event-card__acc {
+.events .event-card:first-of-type {
   background-color: var(--card-bg-acc-clr);
+  color: var(--text-acc-clr);
+}
+
+.events .event-card:first-of-type .event-details {
+  color: var(--text-acc-clr);
 }
 
 .event-card .day {
@@ -32,9 +45,12 @@
   font-weight: 300;
 }
 
+.event-card .topic {
+  margin-top: auto;
+}
+
 .event-card .month {
   text-transform: uppercase;
-  font-size: 0.8rem;
 }
 
 .event-card .time {
@@ -47,12 +63,12 @@
 }
 
 .event-card .event-details {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--card-bg-acc-clr);
 }
 
 body {
-  background-color: crimson;
+  /* background-color: crimson; */
   font-family: "Inter", sans-serif;
 }

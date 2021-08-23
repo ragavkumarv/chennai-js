@@ -1,10 +1,6 @@
 import "./App.css";
 
 function App() {
-  return <MeetCard />;
-}
-
-function MeetCard() {
   const content = {
     day: 20,
     month: "June",
@@ -14,6 +10,21 @@ function MeetCard() {
     venue: "Algolia Paris - Bridge",
     capacity: 200,
   };
+
+  const contents = [
+    { ...content, day: "08", topic: "Paris Start-up Innovation Summit" },
+    content,
+  ];
+  return (
+    <div className="events">
+      {contents.map((content) => (
+        <MeetCard content={content} />
+      ))}
+    </div>
+  );
+}
+
+function MeetCard({ content }) {
   return (
     <div className="event-card">
       <div className="date">
