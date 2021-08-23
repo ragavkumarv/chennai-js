@@ -19,18 +19,6 @@
   justify-content: center;
 }
 
-.event-card {
-  width: min(50vw, 15rem);
-  aspect-ratio: 1;
-  background-color: var(--card-bg-pr-clr);
-  /* outline: 1px solid black; */
-  padding: 2em;
-  color: var(--text-pr-clr);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .events .event-card:first-of-type {
   background-color: var(--card-bg-acc-clr);
   color: var(--text-acc-clr);
@@ -38,6 +26,47 @@
 
 .events .event-card:first-of-type .event-details {
   color: var(--text-acc-clr);
+}
+
+.event-card {
+  width: min(50vw, 15rem);
+  aspect-ratio: 1;
+  /* outline: 1px solid black; */
+  padding: 2em;
+  color: var(--text-pr-clr);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--card-bg-pr-clr);
+}
+
+.event-card .top-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-card .speaker-name {
+  font-size: 0.8rem;
+  font-family: "Pacifico", cursive;
+}
+
+.event-card .speaker-pic {
+  height: 5rem;
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.event-card .speaker-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-card .date {
+  /* margin-top: -14px; */
 }
 
 .event-card .day {

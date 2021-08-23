@@ -9,10 +9,18 @@ function App() {
     to: "10PM",
     venue: "Algolia Paris - Bridge",
     capacity: 200,
+    speakerName: "Ragav Kumar V",
+    speakerPic:
+      "https://newadventuresconf.com/2020/assets/images/content/speaker-florence.png",
   };
 
   const contents = [
-    { ...content, day: "08", topic: "Paris Start-up Innovation Summit" },
+    {
+      ...content,
+      day: "08",
+      topic: "Paris Start-up Innovation Summit",
+      speakerName: "Abishek",
+    },
     content,
   ];
   return (
@@ -27,15 +35,26 @@ function App() {
 function MeetCard({ content }) {
   return (
     <div className="event-card">
-      <div className="date">
-        <p className="day">{content.day}</p>
-        <p className="month">{content.month}</p>
+      <div className="top-info">
+        <div className="date">
+          <p className="day">{content.day}</p>
+          <p className="month">{content.month}</p>
+        </div>
+
+        <div className="speaker-info">
+          <img
+            className="speaker-pic"
+            src={content.speakerPic}
+            alt="speaker profile"
+          />
+          <p className="speaker-name">{content.speakerName}</p>
+        </div>
       </div>
       <p className="topic">{content.topic}</p>
       <div className="event-details">
         <div className="time">
           <p className="from">{content.from}</p>
-          <p className="spacer">--</p>
+          <p className="spacer">-</p>
           <p className="to">{content.to}</p>
         </div>
         <p className="venue">
